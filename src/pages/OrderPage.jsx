@@ -50,8 +50,8 @@ const INITIAL_ORDER = {
 
 const PRICES = {
   necklace: 140,
-  braceletAnklet: 80,
-  earrings: 70,
+  braceletAnklet: 100,
+  earrings: 60,
 };
 
 const JEWELRY_TYPES = [
