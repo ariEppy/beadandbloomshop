@@ -1,117 +1,12 @@
-import { useState } from "react";
 import ImageUpload from "./ImageUpload";
-
-const COLORS = [
-  "White",
-  "Black",
-  "Pink",
-  "Light Pink",
-  "Red",
-  "Orange",
-  "Yellow",
-  "Green",
-  "Light Green",
-  "Blue",
-  "Light Blue",
-  "Purple",
-  "Lavender",
-  "Gold",
-  "Silver",
-  "Clear",
-  "Pearl",
-  "Multicolor",
-];
-
-const NECKLACE_LENGTHS = [
-  "Choker (35–41 cm)",
-  "Princess (45–46 cm)",
-  "Matinee (50–61 cm)",
-  "Opera (71–91 cm)",
-  "Lariat (94 cm+)",
-];
-
-const BRACELET_LENGTHS = [
-  "Small (15–17 cm)",
-  "Medium (18–19 cm)",
-  "Large (20–23 cm)",
-];
-
-const ANKLET_LENGTHS = [
-  "Small (22–23 cm)",
-  "Medium (24–25 cm)",
-  "Large (27–28 cm)",
-];
-
-const CHARMS = [
-  "Flowers",
-  "Hearts",
-  "Stars",
-  "Butterflies",
-  "Animals",
-  "Letters",
-  "Smiley Faces",
-  "Food & Drinks",
-  "Nature",
-  "Shells",
-  "Celestial",
-  "Music",
-  "Sports",
-  "Other",
-];
-
-function MultiSelectDropdown({ label, options, selected, onChange }) {
-  const [open, setOpen] = useState(false);
-
-  function toggleOption(option) {
-    if (selected.includes(option)) {
-      onChange(selected.filter((item) => item !== option));
-    } else {
-      onChange([...selected, option]);
-    }
-  }
-
-  return (
-    <div className="multi-select">
-      <button
-        type="button"
-        className={`dropdown-button ${open ? "open" : ""}`}
-        onClick={() => setOpen((previous) => !previous)}
-      >
-        <span className="dropdown-value">
-          {selected.length > 0
-            ? selected.join(", ")
-            : `Choose ${label.toLowerCase()}`}
-        </span>
-
-        <span className="dropdown-arrow">{open ? "⌃" : "⌄"}</span>
-      </button>
-
-      {open && (
-        <div className="dropdown-options">
-          {options.map((option) => (
-            <label key={option} className="checkbox-option">
-              <input
-                type="checkbox"
-                checked={selected.includes(option)}
-                onChange={() => toggleOption(option)}
-              />
-
-              <span>{option}</span>
-            </label>
-          ))}
-
-          <button
-            type="button"
-            className="dropdown-done"
-            onClick={() => setOpen(false)}
-          >
-            Done
-          </button>
-        </div>
-      )}
-    </div>
-  );
-}
+import MultiSelectDropdown from "./MultiSelectDropdown";
+import {
+  ANKLET_LENGTHS,
+  BRACELET_LENGTHS,
+  CHARMS,
+  COLORS,
+  NECKLACE_LENGTHS,
+} from "../data/jewelryOptions";
 
 function JewelryOption({ type, data, onChange }) {
   function update(field, value) {

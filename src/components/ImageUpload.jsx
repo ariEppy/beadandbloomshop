@@ -51,19 +51,19 @@ function ImageUpload({ imageUrl, onUploaded, onRemoved }) {
 
         styles: {
           palette: {
-            window: "#ffffff",
-            windowBorder: "#c4d9fb",
-            tabIcon: "#5f7fae",
-            menuIcons: "#5f7fae",
-            textDark: "#243247",
-            textLight: "#ffffff",
-            link: "#5f7fae",
-            action: "#5f7fae",
-            inactiveTabIcon: "#9aa7b8",
-            error: "#c94c4c",
-            inProgress: "#5f7fae",
-            complete: "#5f7fae",
-            sourceBg: "#f5f8fc",
+            window: "#fffdf9",
+            windowBorder: "#cbbfb0",
+            tabIcon: "#1d1a17",
+            menuIcons: "#5c544c",
+            textDark: "#1d1a17",
+            textLight: "#fffdf9",
+            link: "#3d68a8",
+            action: "#1d1a17",
+            inactiveTabIcon: "#8a8077",
+            error: "#a3402f",
+            inProgress: "#1d1a17",
+            complete: "#4c6b4f",
+            sourceBg: "#f6f1ea",
           },
         },
       },
@@ -154,11 +154,24 @@ function ImageUpload({ imageUrl, onUploaded, onRemoved }) {
           onClick={openUploader}
           disabled={uploading}
         >
-          <span className="upload-icon">📷</span>
+          <svg
+            className="upload-icon"
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 16V5" />
+            <path d="M7.5 9.5 12 5l4.5 4.5" />
+            <path d="M5 15v3a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3" />
+          </svg>
 
-          <span>
-            {uploading ? "Uploading..." : "Upload Inspiration Picture"}
-          </span>
+          <span>{uploading ? "Uploading..." : "Upload a picture"}</span>
         </button>
       )}
 

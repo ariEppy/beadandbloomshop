@@ -9,8 +9,6 @@ function CustomerForm({ customer, onChange }) {
 
   return (
     <section className="customer-form">
-      <div className="customer-heading"></div>
-
       <div className="customer-fields">
         <label>
           <span className="field-label">Name</span>
