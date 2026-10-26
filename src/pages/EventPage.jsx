@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { emailErrorReason } from "../utils/emailError";
 import CustomerForm from "../components/CustomerForm";
 import ImageUpload from "../components/ImageUpload";
 import MultiSelectDropdown from "../components/MultiSelectDropdown";
@@ -163,12 +162,8 @@ function EventPage({ onNavigate }) {
     } catch (sendError) {
       console.error("EmailJS error:", sendError);
 
-      const reason = emailErrorReason(sendError);
-
       setError(
-        `Something went wrong while sending your request. Please try again.${
-          reason ? ` (${reason})` : ""
-        }`,
+        "Something went wrong while sending your request. Please try again.",
       );
     } finally {
       setSending(false);
