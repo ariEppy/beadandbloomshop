@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { emailErrorReason } from "../utils/emailError";
 import CustomerForm from "../components/CustomerForm";
 import JewelryIcon from "../components/JewelryIcon";
 import QuantityStepper from "../components/QuantityStepper";
@@ -120,8 +121,12 @@ ESTIMATED TOTAL: ₪${total}${promoLine}`;
     } catch (sendError) {
       console.error("EmailJS error:", sendError);
 
+      const reason = emailErrorReason(sendError);
+
       setError(
-        "Something went wrong while sending your order. Please try again.",
+        `Something went wrong while sending your order. Please try again.${
+          reason ? ` (${reason})` : ""
+        }`,
       );
     } finally {
       setSending(false);
