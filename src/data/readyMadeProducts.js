@@ -21,7 +21,7 @@ const READY_MADE_PRODUCTS = [
     id: "blue-sun-necklace",
     name: "Blue Sun Necklace",
     category: "necklace",
-    price: 140,
+    price: 120,
     image: blueSunNecklace,
     description:
       "Dusky blue rondelle beads with gold spacers and a gold sun pendant. All metal components are stainless steel. Adjustable length: 16–18 inches.",
@@ -31,7 +31,7 @@ const READY_MADE_PRODUCTS = [
     id: "tiger-eye-starfish-necklace",
     name: "Tiger Eye Starfish Necklace",
     category: "necklace",
-    price: 140,
+    price: 120,
     image: tigerEyeStarfishNecklace,
     description:
       "Round tiger eye beads in warm browns and gold, finished with a gold starfish pendant.",
@@ -41,7 +41,7 @@ const READY_MADE_PRODUCTS = [
     id: "garden-mix-necklace",
     name: "Garden Mix Necklace",
     category: "necklace",
-    price: 140,
+    price: 100,
     image: gardenMixNecklace,
     description:
       "Green glass and tiger eye beads mixed with soft pink, frosted crystal and matte mauve spacers.",
@@ -51,7 +51,7 @@ const READY_MADE_PRODUCTS = [
     id: "blue-blush-necklace",
     name: "Blue & Blush Necklace",
     category: "necklace",
-    price: 140,
+    price: 80,
     image: blueBlushNecklace,
     description:
       "Sky blue rondelles with small deep green beads and pale pink crystals.",
@@ -61,7 +61,7 @@ const READY_MADE_PRODUCTS = [
     id: "pink-lemonade-necklace",
     name: "Pink Lemonade Necklace",
     category: "necklace",
-    price: 140,
+    price: 80,
     image: pinkLemonadeNecklace,
     description:
       "Candy pink rondelles with deep red beads and mustard yellow crystals.",
